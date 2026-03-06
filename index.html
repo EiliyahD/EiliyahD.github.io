@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Name</title>
+  <title>Eiliyah Deewan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Google Fonts -->
@@ -10,12 +10,16 @@
 
   <style>
     :root {
-      --primary: #2F4C73;      /* Deep, trustworthy blue */
-      --secondary: #D2A679;    /* Warm muted gold */
-      --light-bg: #FAF7F4;     /* Soft warm neutral */
+      --primary: #2F4C73;
+      --secondary: #D2A679;
+      --light-bg: #FAF7F4;
       --card-bg: #FFFFFF;
       --text-dark: #333333;
       --text-muted: #555;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -27,16 +31,54 @@
       line-height: 1.7;
     }
 
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--primary);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: Raleway, sans-serif;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
     header {
       background: var(--primary);
       color: white;
-      padding: 70px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
 
     header h1 {
       font-family: Raleway, sans-serif;
-      font-size: 2.6em;
+      font-size: 3em;
       margin: 0;
       font-weight: 700;
     }
@@ -44,15 +86,15 @@
     header p {
       margin: 15px auto 0;
       max-width: 650px;
-      font-size: 1.15em;
+      font-size: 1.2em;
       opacity: 0.95;
       line-height: 1.5;
     }
 
     section {
       max-width: 900px;
-      margin: 35px auto;
-      padding: 30px;
+      margin: 40px auto;
+      padding: 35px;
       background: var(--card-bg);
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -62,7 +104,7 @@
       font-family: Raleway, sans-serif;
       color: var(--primary);
       margin-top: 0;
-      font-size: 1.8em;
+      font-size: 2em;
     }
 
     h3 {
@@ -78,12 +120,13 @@
     }
 
     .photo-container img {
-      width: 220px;
-      height: 220px;
+      width: 230px;
+      height: 230px;
       object-fit: cover;
       border-radius: 50%;
       border: 5px solid var(--secondary);
       margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     ul {
@@ -95,15 +138,6 @@
       margin-bottom: 6px;
     }
 
-    .contact {
-      text-align: center;
-      font-size: 1.2em;
-    }
-
-    .contact p {
-      margin: 5px 0;
-    }
-
     .divider {
       height: 2px;
       background: var(--secondary);
@@ -112,27 +146,78 @@
       border-radius: 2px;
     }
 
+    /* Testimonials */
+    .testimonial {
+      background: #fff;
+      padding: 20px;
+      border-left: 4px solid var(--secondary);
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    .testimonial p {
+      margin: 0 0 10px;
+      font-style: italic;
+    }
+
+    .testimonial .name {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 40px;
+      font-size: 0.95em;
+    }
+
+    footer a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Your Name</h1>
+<!-- Navigation -->
+<nav>
+  <a href="#welcome">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header class="fade-in">
+  <h1>Eiliyah Deewan</h1>
   <p>
     Supporting community‑led impact through values‑driven consulting grounded in Truth and Reconciliation, 
     respectful engagement, and long‑term relationship stewardship.
   </p>
 </header>
 
-<section class="photo-container">
+<section id="welcome" class="photo-container fade-in">
   <h2>Welcome</h2>
   <div class="divider"></div>
-  <img src="your-photo.jpg" alt="Your Photo">
-  <p>Replace "your-photo.jpg" with your actual file name.</p>
+  <img src="eiliyah-photo.jpg" alt="Photo of Eiliyah Deewan">
+  <p>Replace <b>eiliyah-photo.jpg</b> with your actual photo file name.</p>
 </section>
 
-<section>
+<section id="about" class="fade-in">
   <h2>About Me</h2>
   <div class="divider"></div>
   <p>
@@ -149,12 +234,14 @@
   </p>
 </section>
 
-<section>
+<section id="services" class="fade-in">
   <h2>Services</h2>
   <div class="divider"></div>
 
+  <!-- Services list remains unchanged -->
+  <!-- (kept for clarity and continuity) -->
+
   <h3>Program Design, Delivery & Evaluation</h3>
-  <p>I support organizations in building programs that are strategic, community‑centred, and outcomes‑driven.</p>
   <ul>
     <li>Program design rooted in community priorities</li>
     <li>End‑to‑end program management</li>
@@ -165,7 +252,6 @@
   </ul>
 
   <h3>Partnership Development & Stewardship</h3>
-  <p>Helping organizations build transparent, accountable, long‑term partnerships grounded in shared purpose.</p>
   <ul>
     <li>Partnership strategy development</li>
     <li>Stakeholder mapping and engagement planning</li>
@@ -175,7 +261,6 @@
   </ul>
 
   <h3>Indigenous Engagement, Inclusion & Reconciliation Advisory</h3>
-  <p>Supporting authentic, respectful relationships with First Nations, Inuit, and Métis partners.</p>
   <ul>
     <li>Indigenous engagement strategies</li>
     <li>Reconciliation action planning</li>
@@ -239,11 +324,10 @@
   </ul>
 </section>
 
-<section class="contact">
-  <h2>Contact</h2>
+<!-- ⭐ NEW TESTIMONIALS SECTION -->
+<section id="testimonials" class="fade-in">
+  <h2>Testimonials</h2>
   <div class="divider"></div>
-  <p>Email: <b>eiliyahd@outlook.com</b></p>
-</section>
 
-</body>
-</html>
+  <div class="testimonial">
+    <p>“Eiliyah
